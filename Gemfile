@@ -31,6 +31,7 @@ gem 'bcrypt', '~> 3.1.7'
 # Authentication via oauth
 gem 'omniauth'
 gem 'omniauth-github'
+gem 'devise'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

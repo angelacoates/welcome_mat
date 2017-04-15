@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :homes
   get 'pages/landing'
   root 'pages#landing'

@@ -1,4 +1,6 @@
 class HomesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+
   # GET /homes
   def index
     @homes = Home.all
@@ -27,6 +29,7 @@ class HomesController < ApplicationController
   # POST /homes
   def create
     @home = Home.new(home_params)
+    @home.user = current_user
 
     if @home.save
       redirect_to @home, notice: 'Home was successfully created.'

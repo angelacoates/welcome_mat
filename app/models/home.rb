@@ -1,4 +1,5 @@
 class Home < ApplicationRecord
+  belongs_to :user
   include ImageUploader[:image]
   validates :address, presence: true
   validates :city, presence: true

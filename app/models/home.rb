@@ -9,7 +9,7 @@ class Home < ApplicationRecord
   validates :zipcode, presence: true
 
   def self.search(search)
-    searchstring = search.to_s.gsub(',','')
-    where("address ILIKE ? OR city ILIKE ? OR state ILIKE ? OR zipcode ILIKE ?", "%#{searchstring}%", "%#{searchstring}%", "%#{searchstring}%", "%#{searchstring}%")
+      searchstring = search.to_s.gsub(',','')
+      where("address ILIKE ? OR city ILIKE ? OR state ILIKE ? OR zipcode ILIKE ?", "%#{searchstring}%", "%#{searchstring}%", "%#{searchstring}%", "%#{searchstring}%")
   end
 end

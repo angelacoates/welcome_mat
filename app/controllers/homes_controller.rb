@@ -3,11 +3,11 @@ class HomesController < ApplicationController
 
   # GET /homes
   def index
-    @homes = Home.all
     if params[:search]
-      @homes = Home.search(params[:search]).order("created_at DESC")
+      @homes =
+        Home.search(params[:search]).page(params[:page]).per(10).order("created_at DESC")
     else
-      @homes = Home.all.order("created_at DESC")
+      @homes = Home.page(params[:page]).per(10).order("created_at DESC")
     end
   end
 

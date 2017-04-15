@@ -51,13 +51,16 @@
           <%= distance_of_time_in_words(Time.now, home.created_at) %> ago </font>
         <% else %>
            <%= distance_of_time_in_words(Time.now, home.created_at) %> ago
-
-
         <% end %>
        </td>
 
-
-        <td><%= image_tag(home.image_url(:medium)) %></td>
+       <td>
+       <% if home.image %>
+         <%= image_tag(home.image_url(:medium)) %>
+            <% else %>
+              No image available
+            <% end %>
+          </td>
 
           <% if current_user && current_user == home.user %>
             <td>
@@ -79,6 +82,10 @@
 
       </tr>
       <% end %>
+
+      <%= paginate @homes %>
+      <%= page_entries_info @homes %>
+
     </tbody>
   </table>
 </div>

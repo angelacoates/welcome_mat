@@ -41,10 +41,14 @@
   <dt>Year built:</dt>
   <dd><%= @home.year_built %></dd>
 
-  <dt>Created by:</dt>
-  <dd><%= @home.created_by %></dd>
 
-  <dt>Image data:</dt>
-  <dd><%= image_tag(@home.image_url(:medium)) %></dd>
+  <dd>
+    <% if @home.image %>
+      <dt>Image data:</dt>
+      <%= image_tag(@home.image_url(:medium)) %>
+    <% else %>
+      <dt>No Image Available</dt>
+    <% end %>
+  </dd>
 
 </dl>

@@ -32,6 +32,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'devise'
+gem 'kaminari'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -46,7 +47,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
   gem 'better_errors'
-  gem 'binding_of_caller'	
+  gem 'binding_of_caller'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

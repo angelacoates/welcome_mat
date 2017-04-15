@@ -1,3 +1,16 @@
-.landing {
-  border: 5px solid red;
+html, body {
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+body.controller-pages {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: image-url("hero1.jpg");
+
+}
+
+.jumbotron {
+  background-color: rgba(115, 91, 38, 0.89)
+  
 }

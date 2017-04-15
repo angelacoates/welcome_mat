@@ -2,6 +2,11 @@ class HomesController < ApplicationController
   # GET /homes
   def index
     @homes = Home.all
+    if params[:search]
+      @homes = Home.search(params[:search]).order("created_at DESC")
+    else
+      @homes = Home.all.order("created_at DESC")
+    end
   end
 
   # GET /homes/1

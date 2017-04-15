@@ -6,4 +6,9 @@ class Home < ApplicationRecord
   validates :price, presence: true
   validates :description, presence: true
   validates :zipcode, presence: true
+
+  def self.search(search)
+    searchstring = search.to_s.gsub(',','')
+    where("address ILIKE ? OR city ILIKE ? OR state ILIKE ? OR zipcode ILIKE ?", "%#{searchstring}%", "%#{searchstring}%", "%#{searchstring}%", "%#{searchstring}%")
+  end
 end

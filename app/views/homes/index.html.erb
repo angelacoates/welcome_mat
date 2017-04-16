@@ -1,12 +1,43 @@
 <div class="page-header">
   <% if user_signed_in? %>
     <%= link_to new_home_path, class: 'btn btn-primary' do %>
-      <span class="glyphicon glyphicon-plus"></span>
-      New Home
+
+      Add listing
     <% end %>
   <% end %>
-  <h1 Listing>homes</h1>
+  <h1>Listings</h1>
 </div>
+
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <%= image_tag("http://www.leisepropertyservices.com/wp-content/uploads/2014/12/selling-your-home-cedar-shingle-home11.jpg", size: "400x200") %>
+      <div class="caption">
+        <div class="row">
+          <div class="col-xs-6">
+            <h4>Address</h4>
+            <p>456 mable lane</p>
+            <h4>Price</h4>
+            <p>4000000</p>
+          </div>
+          <div class="col-xs-6">
+            <h4>Bedrooms</h4>
+            <p>3</p>
+            <h4>Bathrooms</h4>
+            <p>4</p>
+            <h5>beautiful three bedroom four bathroom single family home in northern CN</h5>
+          </div>
+        </div>
+
+        <p><a href="#" class="btn btn-default"role="button">View Details</a></p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+
 
 <div class="table-responsive">
   <table class="table table-striped table-bordered table-hover">

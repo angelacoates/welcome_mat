@@ -7,35 +7,38 @@
   <% end %>
   <h1>Listings</h1>
 </div>
-
 <div class="row">
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <%= image_tag("http://www.leisepropertyservices.com/wp-content/uploads/2014/12/selling-your-home-cedar-shingle-home11.jpg", size: "400x200") %>
+  <% @homes.each do |home| %>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <% if home.image_url(:original) %>
+          <%= image_tag(home.image_url(:original)) %>
+        <% else %>
+          No image available for home <%= home.id %>
+        <% end %>
+      </div>
       <div class="caption">
         <div class="row">
           <div class="col-xs-6">
             <h4>Address</h4>
-            <p>456 mable lane</p>
+            <p><%= home.address %></p>
             <h4>Price</h4>
-            <p>4000000</p>
+            <p><%= home.price %></p>
           </div>
           <div class="col-xs-6">
             <h4>Bedrooms</h4>
-            <p>3</p>
+            <p><%= home.bedrooms %></p>
             <h4>Bathrooms</h4>
-            <p>4</p>
-            <h5>beautiful three bedroom four bathroom single family home in northern CN</h5>
+            <p><%= home.bathroms %></p>
+            <h5><%= home.description %></h5>
           </div>
         </div>
-
         <p><a href="#" class="btn btn-default"role="button">View Details</a></p>
         </div>
       </div>
-    </div>
-    </div>
+    <% end %>
   </div>
-</div>
+
 
 
 
@@ -60,7 +63,7 @@
     </thead>
 
     <tbody class="table-body">
-      <%- @homes.each do |home| %>
+      <% @homes.each do |home| %>
       <tr>
         <td><%= home.address %></td>
         <td><%= home.city %></td>

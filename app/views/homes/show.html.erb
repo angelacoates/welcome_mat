@@ -1,54 +1,52 @@
 <div class="page-header">
   <%= link_to homes_path, class: 'btn btn-default' do %>
-    <span class="glyphicon glyphicon-list-alt"></span>
-    Back
+    Back to Listings
   <% end %>
-  <%= link_to edit_home_path(@home), class: 'btn btn-primary' do %>
-    <span class="glyphicon glyphicon-pencil"></span>
-    Edit
+
+  <!-- <%= link_to edit_home_path(@home), class: 'btn btn-success' do %> -->
+
   <% end %>
   <h1>Listing</h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt>Address:</dt>
-  <dd><%= @home.address %></dd>
-
-  <dt>City:</dt>
-  <dd><%= @home.city %></dd>
-
-  <dt>State:</dt>
-  <dd><%= @home.state %></dd>
-
-  <dt>Zipcode:</dt>
-  <dd><%= @home.zipcode %></dd>
-
-  <dt>Bedrooms:</dt>
-  <dd><%= @home.bedrooms %></dd>
-
-  <dt>Bathroms:</dt>
-  <dd><%= @home.bathroms %></dd>
-
-  <dt>Squarefoot:</dt>
-  <dd><%= @home.squarefoot %></dd>
-
-  <dt>Price:</dt>
-  <dd><%= @home.price %></dd>
-
-  <dt>Description:</dt>
-  <dd><%= @home.description %></dd>
-
-  <dt>Year built:</dt>
-  <dd><%= @home.year_built %></dd>
-
-
-  <dd>
+<div class="media">
+  <div class="media-left">
     <% if @home.image %>
-      <dt>Image data:</dt>
       <%= image_tag(@home.image_url(:medium)) %>
     <% else %>
       <dt>No Image Available</dt>
     <% end %>
-  </dd>
 
-</dl>
+  </div>
+  <div class="media-body">
+    <dt>Address:</dt>
+    <dd><%= @home.address %></dd>
+
+    <dt>City:</dt>
+    <dd><%= @home.city %></dd>
+
+    <dt>State:</dt>
+    <dd><%= @home.state %></dd>
+
+    <dt>Zipcode:</dt>
+    <dd><%= @home.zipcode %></dd>
+
+    <dt>Bedrooms:</dt>
+    <dd><%= @home.bedrooms %></dd>
+
+    <dt>Bathroms:</dt>
+    <dd><%= @home.bathroms %></dd>
+
+    <dt>Squarefoot:</dt>
+    <dd><%= @home.squarefoot %></dd>
+
+    <dt>Price:</dt>
+    <dd><%= @home.price %></dd>
+
+    <dt>Description:</dt>
+    <dd><%= @home.description %></dd>
+
+    <dt>Year built:</dt>
+    <dd><%= @home.year_built %></dd>
+  </div>
+</div>

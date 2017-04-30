@@ -1,0 +1,3 @@
+console.log('This is from the server, NIIICCEE. There are <%= @homes.size %> items matched')
+
+$('.homes-row').html('<%= j(render @homes) %>')

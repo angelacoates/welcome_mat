@@ -9,60 +9,8 @@
 </div
 
 
-<div class="row">
-  <%- @homes.each do |home| %>
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <% if (home.created_at).utc <= (DateTime.now + 2.days).utc %>
-        <font color='green'>
-          Listed <%= distance_of_time_in_words(Time.now, home.created_at) %> ago </font>
-        <% elsif (home.created_at).utc >= (DateTime.now + 30.days).utc %>
-        <font color='orange'>
-          Listed <%= distance_of_time_in_words(Time.now, home.created_at) %> ago </font>
-        <% else %>
-           Listed <%= distance_of_time_in_words(Time.now, home.created_at) %> ago
-        <% end %>
-        <% if home.image_url(:medium) %>
-          <%= image_tag(home.image_url(:medium), class: "home-image") %>
-        <% else %>
-          No image available for home <%= home.id %>
-        <% end %>
-      </div>
-      <div class="caption">
-        <div class="row">
-          <div class="col-xs-6">
-            <h4>Address</h4>
-            <p><%= home.address %></p>
-            <h4>Price</h4>
-            <p><%= home.price %></p>
-          </div>
-          <div class="col-xs-6">
-            <h4>Bedrooms</h4>
-            <p><%= home.bedrooms %></p>
-            <h4>Bathrooms</h4>
-            <p><%= home.bathroms %></p>
-            <p> <% if current_user && current_user == home.user %>
-            </p>
-      <p> <%= link_to edit_home_path(home) do %>
-        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-          <% end %>
-      </p>
-      <p> <%= link_to home, method: :delete, data: { confirm: 'Are you sure?' } do %>
-          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-          <% end %>
-        <% end %>
-          </p>
-            <!-- <h5><%= home.description %></h5> -->
-          </div>
-        </div>
-            <div>
-                <p>
-                  <%= link_to "View Details", home, class: "btn btn-default" %>
-                </p>
-            </div>
-        </div>
-      </div>
-    <% end %>
+<div class="row homes-row">
+    <%= render @homes %>
   </div>
 
 

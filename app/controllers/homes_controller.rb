@@ -55,6 +55,23 @@ class HomesController < ApplicationController
     redirect_to homes_url, notice: 'Home was successfully destroyed.'
   end
 
+  def favorite
+    home = Home.find(params[:id])
+
+    Favorite.create(home: home, user: current_user)
+
+    Rails.logger.info "FAVORITING!!!!"
+  end
+
+  def unfavorite
+    home = Home.find(params[:id])
+    favorite = Favorite.find_by(home: home, user: current_user)
+
+    favorite.destroy
+
+    Rails.logger.info "UN FAVORITING!!!!"
+  end
+
   private
 
   # Only allow a trusted parameter "white list" through.

@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :homes
+
+  resources :homes do
+    member do
+      post 'favorite'
+      post 'unfavorite'
+    end
+  end
+
   get 'pages/landing'
   root 'pages#landing'
   mount Shrine::DownloadEndpoint => "/attachments"

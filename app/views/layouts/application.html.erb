@@ -40,12 +40,12 @@
        <%= text_field_tag :search, params[:search], placeholder: "Search Homes" %>
        <%= submit_tag "Search", :name => nil %>
          <% end %>
-        
+
 
           <li><%= link_to 'View Homes',homes_path %></li>
           <% if current_user %>
               <li><%= link_to 'Edit Profile',edit_user_registration_path %></li>
-              <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+              <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %></li>
               <li class="navbar-text"> Hello, <%= current_user.first_name %> </li>
           <% else %>
               <li><%= link_to 'Sign in', new_user_session_path %></li>

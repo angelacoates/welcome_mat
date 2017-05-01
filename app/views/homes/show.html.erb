@@ -1,3 +1,34 @@
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-lg">Large modal</button>
+
+<div class="modal fade" id="modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <%= image_tag(@home.image_url(:large)) %>
+    </div>
+  </div>
+</div>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-med">Medium modal</button>
+
+<div class="modal fade" id="modal-med" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <%= image_tag(@home.image_url(:medium)) %>
+    </div>
+  </div>
+</div>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-sml">Small modal</button>
+
+<div class="modal fade"id="modal-sml" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <%= image_tag(@home.image_url(:small)) %>
+    </div>
+  </div>
+</div>
+
+
 <div class="page-header">
   <%= link_to homes_path, class: 'btn btn-default' do %>
     Back to Listings

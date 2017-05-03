@@ -6,9 +6,10 @@ class NotificationsMailer < ApplicationMailer
   #   en.notifications_mailer.likes_a_house.subject
   #
   def likes_a_house(home, current_user)
-    @greeting = "Hi"
+    @home = home
+    @current_user = current_user
 
-    mail to: "to@example.org"
+    mail to: @home.user.email
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml

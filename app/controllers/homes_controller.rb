@@ -59,7 +59,7 @@ class HomesController < ApplicationController
     home = Home.find(params[:id])
 
     Favorite.create(home: home, user: current_user)
-
+    NotificationsMailer.likes_a_house(home, current_user).deliver_later
     Rails.logger.info "FAVORITING!!!!"
   end
 

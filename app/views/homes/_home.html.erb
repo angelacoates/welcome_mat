@@ -39,7 +39,7 @@
               <p><%= home.bathroms %></p>
               <h4>Favorite</h4>
               <p>
-                <span    data-home-id="<%= home.id %>"      class="favorite-home glyphicon <%= heart_class(home, current_user) %>"></span>
+                <span data-home-id="<%= home.id %>" class="favorite-home glyphicon <%= heart_class(home, current_user) %>"></span>
               </p>
               <% if current_user && current_user == home.user %>
                 <p>
